@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Showroom</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { background-color: #333; color: white; padding: 15px; text-align: center; font-size: 24px; }
+        .left-nav { background-color: #f8f9fa; padding: 20px; border-right: 1px solid #ddd; }
+        .bike-list a { display: block; padding: 10px 0; color: #007bff; text-decoration: none; }
+        .bike-list a:hover { text-decoration: underline; }
+        .content { padding: 20px; }
+        .frame-container { display: flex; height: 90vh; }
+        .left-nav { width: 25%; overflow-y: auto; }
+        .content { width: 75%; overflow-y: auto; }
+        img { max-width: 100%; height: auto; margin-top: 10px; }
+    </style>
+    <script>
+        function showBikes(brand) {
+            let models = {
+                'Yamaha': '<h2>Yamaha Bikes</h2><p>Model 1: Yamaha YZF R15 V3<br>Model 2: Yamaha FZ S FI V3</p>' +
+                          '<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/yamaha-select-model-metallic-red-1704802630538.png?q=80" alt="Yamaha YZF R15 V3">',
+                'Honda': '<h2>Honda Bikes</h2><p>Model 1: Honda CBR 150R<br>Model 2: Honda CB Shine</p>' +
+                         '<img src="https://imgd.aeplcdn.com/664x374/bw/models/honda-cbr150-r-standard-118.jpg?20190103151915&q=80.jpg" alt="Honda CBR 150R">',
+                'Suzuki': '<h2>Suzuki Bikes</h2><p>Model 1: Suzuki Gixxer<br>Model 2: Suzuki Access 125</p>' +
+                          '<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/suzuki-select-model-pearl-mira-red-1671516588630.png?q=80" alt="Suzuki Gixxer">',
+                'Aprilia': '<h2>Aprilia Bikes</h2><p>Model 1: Aprilia RSV4<br>Model 2: Aprilia SR 150</p>' +
+                           '<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/aprilia-select-model-white-1683707939053.jpg?q=80" alt="Aprilia RSV4">',
+                'Harley-Davidson': '<h2>Harley-Davidson Bikes</h2><p>Model 1: Harley-Davidson Iron 883<br>Model 2: Harley-Davidson Street 750</p>' +
+                                   '<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/harleydavidson-iron-883-standard1677237126841.jpg?q=80" alt="Harley-Davidson Iron 883">',
+                'Ducati': '<h2>Ducati Bikes</h2><p>Model 1: Ducati Panigale V4<br>Model 2: Ducati Monster</p>' +
+                          '<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/ducati-select-model-ducati-red-std-1661850819625.png?q=80" alt="Ducati Panigale V4">',
+                'BMW': '<h2>BMW Bikes</h2><p>Model 1: BMW S1000RR<br>Model 2: BMW G310R</p>' +
+                       '<img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/182313/bmw-s1000rr-right-side-view16.jpeg?isig=0&wm=3&q=80" alt="BMW S1000RR">',
+                'Royal Enfield': '<h2>Royal Enfield Bikes</h2><p>Model 1: Royal Enfield Classic 350<br>Model 2: Royal Enfield Himalayan</p>' +
+                                 '<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/183389/classic-350-right-side-view-62.jpeg?isig=0&q=80" alt="Royal Enfield Classic 350">',
+                'Kawasaki': '<h2>Kawasaki Bikes</h2><p>Model 1: Kawasaki Ninja ZX-10R<br>Model 2: Kawasaki Z900</p>' +
+                            '<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/188391/kawasaki-ninja-zx-10r-right-side-view1.jpeg?isig=0&q=80" alt="Kawasaki Ninja ZX-10R">'
+            };
+            document.getElementById('content-frame').innerHTML = models[brand];
+        }
+    </script>
+</head>
+<body>
+
+    <div class="header">Bike Showroom</div>
+
+    <div class="frame-container">
+        <div class="left-nav">
+            <h3>Bike Brands</h3>
+            <div class="bike-list">
+                <a href="#" onclick="showBikes('Yamaha')">Yamaha</a>
+                <a href="#" onclick="showBikes('Honda')">Honda</a>
+                <a href="#" onclick="showBikes('Suzuki')">Suzuki</a>
+                <a href="#" onclick="showBikes('Aprilia')">Aprilia</a>
+                <a href="#" onclick="showBikes('Harley-Davidson')">Harley-Davidson</a>
+                <a href="#" onclick="showBikes('Ducati')">Ducati</a>
+                <a href="#" onclick="showBikes('BMW')">BMW</a>
+                <a href="#" onclick="showBikes('Royal Enfield')">Royal Enfield</a>
+                <a href="#" onclick="showBikes('Kawasaki')">Kawasaki</a>
+            </div>
+        </div>
+        <div class="content" id="content-frame">
+            <h2>Welcome to our Bike Showroom</h2>
+            <p>Select a brand to see the models, specifications, and images.</p>
+        </div>
+    </div>
+
+</body>
+</html>

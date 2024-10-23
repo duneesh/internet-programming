@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Tables</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        table { margin: 40px auto; border-collapse: collapse; }
+        th, td { border: 2px solid #ddd; padding: 8px; }
+        th { background-color: white; color: red; }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Tables</h1>
+    <input type="number" id="number" value="1" min="1">
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="tableContainer"></div>
+
+    <script>
+        function generateTable() {
+            const num = document.getElementById('number').value;
+            let html = `<table><tr><th>${num} Times Table</th></tr>`;
+            for (let i = 1; i <= 10; i++) {
+                html += `<tr><td>${num} x ${i} = ${num * i}</td></tr>`;
+            }
+            html += '</table>';
+            document.getElementById('tableContainer').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
